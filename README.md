@@ -1,8 +1,6 @@
 # Comment créer une notification sur Android ?
 ## TP réalisé en Kotlin
 
-### Antoine Lafrance
-
 Ce TP a pour but de vous guider dans la création d'une notification sous Android, en utilisant le language Kotlin.
 
 Vous trouverez le code initial dans le dossier "init", et le code final dans le dossier "final". Vous trouverez les ressources 
