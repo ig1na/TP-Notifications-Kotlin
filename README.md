@@ -1,4 +1,4 @@
-# Comment créer une notification pour un smartphone Android ?
+# Comment créer une notification sur Android ?
 ## TP réalisé en Kotlin
 
 ### Antoine Lafrance
