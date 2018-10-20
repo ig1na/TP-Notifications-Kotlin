@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     var channel_name = "channel name"
     var channel_description = "channel description"
 
+    lateinit var mBuilder: NotificationCompat.Builder
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,10 +36,12 @@ class MainActivity : AppCompatActivity() {
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
 
-        var mBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
+        mBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.heart)
                 .setContentTitle(textTitle)
                 .setContentText(textContent)
+                .setStyle(NotificationCompat.BigTextStyle()
+                        .bigText("Un très long text qu'il est impossible d'afficher sur une notification normale, nous devons donc l'étendre pour l'afficher. Bla bla bla bla blablablablablablablablablablablablab bla blab blablabablablablalb"))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
@@ -45,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         val button1 = findViewById<Button>(R.id.notification_1)
         button1.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                showNotification1(mBuilder)
+                showNotification1()
             }
         })
     }
@@ -64,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showNotification1(mBuilder: NotificationCompat.Builder) {
+    fun showNotification1() {
         with(NotificationManagerCompat.from(this)) {
             notify(notif_1_ID, mBuilder.build())
         }
