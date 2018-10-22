@@ -13,6 +13,7 @@ const val notif_1_ID = 1
 
 class MainActivity : AppCompatActivity() {
 
+    //On instancie les variables nécessaires à la construction de notre notification. Leur valeur importe peu.
     var textTitle = "Ma notification"
     var textContent = "Ceci est une notification"
     var channel_name = "channel name"
